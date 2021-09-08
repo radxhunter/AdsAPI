@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adsDevices-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adsdevicesservice
+  template:
+    metadata:
+      labels:
+        app: adsdevicesservice
+    spec:
+      containers:
+        - name: adsdevicesservice
+          image: radxhunter/adsdevicesservice:latest
